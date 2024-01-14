@@ -75,6 +75,10 @@ setupDatabase();
 
 const db = couchdb.use(dbName);
 
+app.get('/', async(req, res) => {
+    res.send("<h1>Service is live...</h1>")
+})
+
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
